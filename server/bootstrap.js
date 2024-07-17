@@ -52,6 +52,7 @@ module.exports = async (
       from_email: 'no-reply@strapi.io',
       response_email: '',
       token_length: 20,
+      stays_valid: false,
       object: 'Passwordless Login',
       message_html: `<p>Hi!</p>
 <p>Please click on the link below to login a strapi driven.</p>
@@ -67,7 +68,7 @@ Thanks.`,
   }
 
   await strapi.admin.services.permission.actionProvider.registerMany(
-    passworlessActions.actions
+   passworlessActions.actions
   );
   // await strapi.plugin('users-permissions').service('passwordless').initialize()
 };
